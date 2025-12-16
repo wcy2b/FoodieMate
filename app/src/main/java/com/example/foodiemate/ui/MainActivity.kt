@@ -1,11 +1,14 @@
 package com.example.foodiemate.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.foodiemate.R
-import com.google.android.material.card.MaterialCardView
+import com.example.foodiemate.ui.fragment.DiaryFragment
+import com.example.foodiemate.ui.fragment.HomeFragment
+import com.example.foodiemate.ui.fragment.MapFragment
+import com.example.foodiemate.ui.fragment.RecipesFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,25 +16,39 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<MaterialCardView>(R.id.cardWheel).setOnClickListener {
-            startActivity(Intent(this, WheelActivity::class.java))
+        val navView = findViewById<BottomNavigationView>(R.id.nav_view)
+
+        // Set default fragment
+        if (savedInstanceState == null) {
+            replaceFragment(HomeFragment())
         }
 
-        findViewById<MaterialCardView>(R.id.cardDiary).setOnClickListener {
-            startActivity(Intent(this, DiaryActivity::class.java))
+        navView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    replaceFragment(HomeFragment())
+                    true
+                }
+                R.id.navigation_diary -> {
+                    replaceFragment(DiaryFragment())
+                    true
+                }
+                R.id.navigation_map -> {
+                    replaceFragment(MapFragment())
+                    true
+                }
+                R.id.navigation_recipes -> {
+                    replaceFragment(RecipesFragment())
+                    true
+                }
+                else -> false
+            }
         }
+    }
 
-        // Placeholders for other features
-        findViewById<MaterialCardView>(R.id.cardMap).setOnClickListener {
-            Toast.makeText(this, "地图周边餐饮功能开发中", Toast.LENGTH_SHORT).show()
-        }
-
-        findViewById<MaterialCardView>(R.id.cardRecommend).setOnClickListener {
-            Toast.makeText(this, "智能推荐功能开发中", Toast.LENGTH_SHORT).show()
-        }
-
-        findViewById<MaterialCardView>(R.id.cardRecipes).setOnClickListener {
-            Toast.makeText(this, "食谱大全功能开发中", Toast.LENGTH_SHORT).show()
-        }
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment, fragment)
+            .commit()
     }
 }

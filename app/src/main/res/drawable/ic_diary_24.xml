@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+  <path
+      android:fillColor="@android:color/white"
+      android:pathData="M20.5,3l-0.6,1.1l-2.2,0.9l-1.8,-0.9L15.3,3L14,5.2l1.2,2.1l-0.5,1L12.5,7L12,9.1L14.1,13l-1.1,1.9L10.8,13L9.5,15.1l1.2,2.1l-0.5,1L8,17l-0.5,2.1l2.1,3.9l-1.1,1.9l-2.2,-0.9l-1.8,0.9L3.9,23L2,20.2l0.9,-1.6L2.3,16l0.9,-1.6L2.6,12l0.9,-1.6L2.9,8l0.9,-1.6L3.2,4L5.1,1.2l2.2,0.9l1.8,-0.9L9.7,3L11,0.8l2.2,0.9l1.8,-0.9L15.6,3L17,0.8l2.2,0.9l1.8,-0.9L22.1,3L20.5,3z M6,6c-1.1,0 -2,0.9 -2,2s0.9,2 2,2s2,-0.9 2,-2S7.1,6 6,6z M6,14c-1.1,0 -2,0.9 -2,2s0.9,2 2,2s2,-0.9 2,-2S7.1,14 6,14z"/>
+  <!-- Simplified book/diary icon representation -->
+  <path
+      android:fillColor="@android:color/white"
+      android:pathData="M18,2H6C4.9,2 4,2.9 4,4v16c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2V4C20,2.9 19.1,2 18,2z M16,11H8V9h8V11z M16,7H8V5h8V7z M14,15H8v-2h6V15z"/>
+</vector>
+
