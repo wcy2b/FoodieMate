@@ -2,5 +2,17 @@
     <string name="app_name">FoodieMate</string>
     <string name="student_name">姓名：待填写</string>
     <string name="student_id">学号：待填写</string>
+
     <string name="welcome_title">今天吃什么？</string>
+
+    <string name="menu_wheel">转盘决定</string>
+    <string name="menu_diary">美食日记</string>
+    <string name="menu_map">周边美食</string>
+    <string name="menu_recommend">智能推荐</string>
+    <string name="menu_recipes">食谱大全</string>
+
+    <string name="entry_food_wheel">转盘吃什么</string>
+    <string name="wheel_title">转盘吃什么</string>
+    <string name="spin_start">开始转动</string>
+    <string name="spin_result">结果：</string>
 </resources>

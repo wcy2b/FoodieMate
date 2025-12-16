@@ -28,6 +28,14 @@
             android:name=".ui.MainActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ui.WheelActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.DiaryActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
