@@ -53,6 +53,11 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
 
     implementation(libs.osmdroid.android)
+    implementation(libs.preference)
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
