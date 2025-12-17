@@ -43,7 +43,12 @@ class DiaryFragment : Fragment() {
 
     private fun setupRecyclerView(view: View) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvDiary)
-        adapter = DiaryAdapter()
+        adapter = DiaryAdapter { diary ->
+            // On Item Click -> Edit
+            val intent = android.content.Intent(requireContext(), com.example.foodiemate.ui.AddDiaryActivity::class.java)
+            intent.putExtra(com.example.foodiemate.ui.AddDiaryActivity.EXTRA_DIARY, diary)
+            startActivity(intent)
+        }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
@@ -54,19 +59,13 @@ class DiaryFragment : Fragment() {
 
     private fun setupFab(view: View) {
         view.findViewById<FloatingActionButton>(R.id.fabAddDiary).setOnClickListener {
-            insertTestDiary()
+            // Navigate to AddDiaryActivity
+            val intent = android.content.Intent(requireContext(), com.example.foodiemate.ui.AddDiaryActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    private fun insertTestDiary() {
-        val currentDate = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(Date())
-        val diary = Diary(
-            foodName = "测试美食 ${System.currentTimeMillis() % 1000}",
-            content = "这是一条测试日记，记录了今天吃的好吃的。时间：$currentDate",
-            date = currentDate
-        )
-        diaryViewModel.insert(diary)
-        Toast.makeText(requireContext(), "已添加测试数据", Toast.LENGTH_SHORT).show()
-    }
+    // private fun insertTestDiary() removed
 }
+
 

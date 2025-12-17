@@ -134,6 +134,8 @@ class MapFragment : Fragment() {
 
         RetrofitClient.instance.searchNearbyRestaurants(query).enqueue(object : Callback<OverpassResponse> {
             override fun onResponse(call: Call<OverpassResponse>, response: Response<OverpassResponse>) {
+                if (!isAdded || context == null) return // Safety check
+
                 if (response.isSuccessful && response.body() != null) {
                     val elements = response.body()!!.elements
                     if (elements.isNotEmpty()) {
@@ -155,6 +157,7 @@ class MapFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<OverpassResponse>, t: Throwable) {
+                if (!isAdded || context == null) return // Safety check
                 tvStatus.text = "网络错误: ${t.message}，显示推荐餐厅"
                 addMockData()
             }
