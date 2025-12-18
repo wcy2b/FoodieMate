@@ -47,7 +47,9 @@ class HomeFragment : Fragment() {
         }
 
         btnRecommend.setOnClickListener {
-            Toast.makeText(requireContext(), "智能推荐功能开发中", Toast.LENGTH_SHORT).show()
+            // Navigate to RecommendActivity
+            val intent = android.content.Intent(requireContext(), com.example.foodiemate.ui.RecommendActivity::class.java)
+            startActivity(intent)
         }
     }
 }
