@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.foodiemate.R
 import com.example.foodiemate.data.entity.Diary
 
@@ -38,10 +39,10 @@ class DiaryAdapter(
             
             if (!diary.imageUri.isNullOrEmpty()) {
                 ivFoodImage.visibility = View.VISIBLE
-                try {
-                    ivFoodImage.setImageURI(Uri.parse(diary.imageUri))
-                } catch (e: Exception) {
-                    ivFoodImage.setImageResource(android.R.drawable.ic_menu_gallery)
+                ivFoodImage.load(diary.imageUri) {
+                    crossfade(true)
+                    placeholder(android.R.drawable.ic_menu_gallery)
+                    error(android.R.drawable.ic_menu_report_image)
                 }
             } else {
                 ivFoodImage.visibility = View.GONE

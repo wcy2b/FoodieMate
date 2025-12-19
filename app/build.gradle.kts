@@ -19,6 +19,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("../keystore/release-key.keystore")
+            storePassword = "123456"
+            keyAlias = "foodiemate_alias"
+            keyPassword = "123456"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -26,6 +35,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
@@ -61,6 +71,7 @@ dependencies {
     implementation(libs.gson)
 
     implementation(libs.coil)
+    implementation(libs.markwon.core)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

@@ -1,5 +1,8 @@
 pluginManagement {
     repositories {
+        maven("https://mirrors.cloud.tencent.com/repository/maven/google")
+        maven("https://mirrors.cloud.tencent.com/repository/maven/maven-central")
+        maven("https://mirrors.cloud.tencent.com/repository/maven/gradle-plugins")
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -14,6 +17,8 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven("https://mirrors.cloud.tencent.com/repository/maven/google")
+        maven("https://mirrors.cloud.tencent.com/repository/maven/maven-central")
         google()
         mavenCentral()
     }

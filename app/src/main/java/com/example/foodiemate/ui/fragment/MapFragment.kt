@@ -32,8 +32,8 @@ class MapFragment : Fragment() {
     private lateinit var map: MapView
     private lateinit var tvStatus: TextView
 
-    // Default location (Beijing - Wangfujing)
-    private val defaultLocation = GeoPoint(39.9042, 116.4074)
+    // Default location (Zhejiang A&F University - East Lake Campus)
+    private val defaultLocation = GeoPoint(30.2596, 119.7288)
 
     private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
@@ -165,11 +165,12 @@ class MapFragment : Fragment() {
     }
 
     private fun addMockData() {
-        addRestaurantMarker(GeoPoint(39.9045, 116.4078), "全聚德烤鸭店", "人均 ¥180 | 烤鸭")
-        addRestaurantMarker(GeoPoint(39.9038, 116.4070), "东来顺饭庄", "人均 ¥120 | 涮羊肉")
-        addRestaurantMarker(GeoPoint(39.9048, 116.4068), "四季民福烤鸭店", "人均 ¥150 | 京菜")
-        addRestaurantMarker(GeoPoint(39.9040, 116.4082), "小吊梨汤", "人均 ¥90 | 私房菜")
-        addRestaurantMarker(GeoPoint(39.9035, 116.4065), "麦当劳(王府井店)", "人均 ¥40 | 快餐")
+        // Mock data around Zhejiang A&F University East Lake Campus
+        addRestaurantMarker(GeoPoint(30.2610, 119.7280), "农林大食堂一楼", "人均 ¥15 | 自选快餐")
+        addRestaurantMarker(GeoPoint(30.2615, 119.7295), "东湖餐厅", "人均 ¥20 | 特色小炒")
+        addRestaurantMarker(GeoPoint(30.2585, 119.7290), "学生活动中心咖啡厅", "人均 ¥25 | 咖啡/甜点")
+        addRestaurantMarker(GeoPoint(30.2590, 119.7275), "肯德基(农林大店)", "人均 ¥35 | 汉堡炸鸡")
+        addRestaurantMarker(GeoPoint(30.2600, 119.7310), "古茗奶茶", "人均 ¥15 | 奶茶果茶")
         map.invalidate()
     }
 
