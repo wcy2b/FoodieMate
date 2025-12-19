@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FoodieMate</string>
-    <string name="student_name">姓名：待填写</string>
-    <string name="student_id">学号：待填写</string>
+    <string name="student_name">姓名：王成琰</string>
+    <string name="student_id">学号：202305100105</string>
 
     <string name="welcome_title">今天吃什么？</string>
 
